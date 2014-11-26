@@ -1,5 +1,7 @@
 #!/usr/bin/python
 """
+Si alguien usando nuestro programa quiere obtener 13 numeros de la secuencia de fibonacci
+deben editar el probrama a mano. 
 If someone using our program wants to get 13 numbers in the Fibonacci sequence
 (or 10 or 100 or any other number), they have to edit our program by hand.
 That's a hassle, so Python has LIBRARIES (collections of tools) that allow you
