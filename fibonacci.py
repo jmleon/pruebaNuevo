@@ -28,4 +28,8 @@ $ ~: fibonacci.py 15
 NOTE: If you use anything other than a number as an argument, the program will
 crash when you try to run it. Can you find a way to make sure the argument is
 a number?
+
+NOTA: si usas algo mas  que un número como argumento, el programa no funcionará cuando 
+trates de ejecutarlo. ¿Puedes encontrar el modo de asegurate de que el argumento es un
+número?
 """
