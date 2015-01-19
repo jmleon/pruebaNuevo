@@ -1,4 +1,4 @@
-"Fibonacci.py"
+"""Fibonacci.py"""
 #!/usr/bin/python
 """
 If someone using our program wants to get 13 numbers in the Fibonacci sequence
