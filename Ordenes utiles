@@ -1,0 +1,66 @@
+git diff:	git diff --> para ver los cambios no preparados aún.
+		git diff --staged --> diferencia entre los cambios preparados y la última confirmación
+		git diff master origin ---> diferencia entre nuestro repositorio y el remoto
+
+
+git commit: 	git commit -v --> se añade en el comentario por defecto las diferencias de los cambios
+		git commit -m "Mensaje" --> Para escribir el mensaje directamente sin el editor
+		git commit -a --> git prepara los archivos que estuviesen en seguimiento
+		git commit --amend --> para hacer un commit con lo que haya en el área de preparación que se unirá al commit último
+
+git rm:		git rm {fichero} --> para eliminar un archivo de los archivos con seguimiento
+		git rm -f {fichero} --> para forzar la eliminación de un archivo (ha sido modificado y añadido añadido al área de preparación)
+		git rm --cached {fichero} --> Mantener un archivo en el disco duro pero eliminarlo del seguimiento en git
+		git rm \*~ -->Este comando elimina todos los archivos que terminan en ~. (O sea, se pueden añadir patrones)
+		
+git mv:		git rm {file_from} {file_to}
+
+
+
+git log:	git log -p --> muestra las diferencias introducidas en cada confirmación
+		git log -p -2 --> muestra únicamente las dos últimas entradas del histórico
+		git log --stat --> para ver algunas estadísticas de cada confirmación
+		git log --since=2.weeks --> limitar la salida del log con las confirmaciones de hace menos de dos semanas (analog --until)
+		(--author y --grep permiten filtrar por autor y por texto contenido en el mensaje de información)
+
+
+git reset:	git reset HEAD {fichero} elimina un fichero del área de preparación
+
+git checkout:	git checkout {fichero} --> deshacer la modificación de un archivo
+		git checkout {rama} --> cambiar a esa rama (Puede ser remota para ver su estado(origin/master))
+		git checkout -b {rama} --> crear rama y cambiar a esa rama. 
+		git checkout -b [rama] [nombreremoto]/[rama] --> crear una rama local que siga a la rama remota
+
+ado
+git remote: 	git remote --> ver los repositorios remotos configurados
+		git remote -v --> muestra la URL asociada a cada repositorio
+		git remote add [nombre] [url] --> para añadir un nuevo repositorio remoto asignándole un nombre con el que referenciarlo
+		git remote show --> muestra información sobre el repositorio remoto
+		git remote rename [oldName][newName] --> para renombrar la referencia a un repositorio remoto.
+		git remote rm [name] --> eliminar un repositorio remoto.
+
+git fetch:	git fetch [remotename] --> recupera la información del repositorio remoto y la pone en el repositorio local
+
+git pull:	git pull --> recupera el estado del servidor remoto y los intenta unir a los archivos con los que se está trabajando. Para 			ello, hay que configurar la rama parar seguir a la rama en remoto.
+
+git push:	git push [nombre-remoto][nombre-rama] --> para enviar los cambios de la rama a un repositorio remoto
+		git push origin [tagname] --> para compartir una etiqueta al repositorio remoto
+		git push origin --tags --> envía todas las tags que no estuvieran en el repositorio remoto.
+		git push [remoto][rama] --> enviar al servidor una rama. El parámetro rama puede tener el siguiente formato: 			[nombreRama:nombreRamaRemota], para asi llamarla de un modo distinto en remoto 
+		 git push [nombreremoto] :[rama] --> eliminar una rama del servidor remoto
+
+git tag:	git tag --> listar todas las etiquetas
+		git tab -a [tagName] -m [mensaje] --> para crear una etiqueta anotada asociada a la última confirmación
+		git tab -s [tagName] -m [mensaje] --> igual que el anterior pero con la etiqueta firmada.
+		git tag [nombreEtiqueta] --> para crear una etiqueta ligera.
+		git tag -a v1.2 9fceb02 --> para etiquetar a una confirmación antigua
+
+
+git branch: 	git branch {rama} --> crear una rama
+		git branch -d {rama} --> eliminar rama
+		git branch -v --> última confirmación de cada rama
+		git branch --merged --> mostrar las ramas que han sido fusionadas con la rama activa
+		git branch --no-merged --> mostrar las ramas que no han sido fusionadas con la rama activa
+
+
+git merge {rama}: une la rama pasada por parámetro a la rama en la que estés

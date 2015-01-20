@@ -1,0 +1,58 @@
+Guía git --> http://librosweb.es/pro_git/capitulo_1.html
+ 
+CLASE 1
+--------------------------------------------------------------------------------------------------------------
+
+Instalar git --> Sudo apt-get install git
+
+git clone direccion_SSh --> traer la working copy
+
+mkdir tet.git --> crea carpeta vacia
+cd test.git
+git init --> Iniciar repositorio
+git add --> Añadir fechero(s)/carpeta(s)
+git status --> preguntarle en que estado esta
+git diff HEAD --> la diferencia con respecto a lo que hay en el repositorio(Servidor en local)
+git commit --> hacer commit. Sale un editor pestoso. Para cambiarlo -> export editor=gedit.
+git config --global user.name "nombre"; --global email "nombre@gmail.com" -->Para cambiar nombre y email.
+git reset --hard --> quitar los cambios (del commit ultimo? o al commit inicial ?)
+git log --> ver todo el historial de cambios.
+git show --> alternativa a git log 
+
+
+
+CLASE 2
+--------------------------------------------------------------------------------------------------------------
+
+fichero .gitignore para ignorar archivos.
+*~ para ignorar las copias de seguridad (un archivo por línea)
+
+get diff HEAD --> direrencia con el ultimo commit
+
+diff --git --> Diferencia incremental
+
+git annotate --> anotar el codigo fuente del fichero que indiquemos
+		(Ultimo commit que modifica la linea, autor, fecha)
+
+git show [idcommit]  --> para ver la información del commit
+
+git grep [texto] --> buscar texto en todo el proyecto
+
+git revert [idcommit]  --> revertir el cambio. Es como un commit
+
+git reset --hard --> borrar los cambios del repositorio antes de hacer commit
+
+git apply [cambio] -->  aplica un cambio que se ha guardado en fichero que se ha guardado previamente con el simbolo > (git diff HEAD > cambio (o algo así))
+
+git pull --rebase --> me traes lo del repositorio y mis cambios los pones detras. (Útil para resolver conflictos. Cambia tus commits id locales)
+
+
+
+
+git branch test --> crea una nueva rrama 
+switched to branch "test"
+
+git branck -D nombre --> borrar rama
+
+git pus origin : nombreRama --> para borrar la rama si esta publicada en el servidor
+
